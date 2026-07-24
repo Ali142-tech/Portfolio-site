@@ -3,14 +3,18 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { profile } from "../data/profile";
+import ThemeToggle from "./ThemeToggle";
 
 const nav = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "about" },
-  { href: "/services", label: "services" },
-  { href: "/projects", label: "projects" },
+  { href: "/about", label: "About" },
+  { href: "/services", label: "Services" },
+  { href: "/projects", label: "Projects" },
   { href: "/contact", label: "Contact" },
 ];
+
+const brand = profile.name.split(" ").slice(0, 2).join(" ");
 
 export default function SiteHeader() {
   const pathname = usePathname();
@@ -23,8 +27,9 @@ export default function SiteHeader() {
           <div className="header-inner rel d-flex align-items-center">
             <div className="logo-outer">
               <div className="logo">
-                <Link href="/">
-                  <img src="/assets/images/logo.png" alt="Logo" title="Logo" />
+                <Link href="/" className="brand-mark">
+                  {brand}
+                  <span>.</span>
                 </Link>
               </div>
             </div>
@@ -33,8 +38,9 @@ export default function SiteHeader() {
               <nav className="main-menu navbar-expand-lg">
                 <div className="navbar-header">
                   <div className="mobile-logo my-15">
-                    <Link href="/">
-                      <img src="/assets/images/logo.png" alt="Logo" title="Logo" />
+                    <Link href="/" className="brand-mark">
+                      {brand}
+                      <span>.</span>
                     </Link>
                   </div>
                   <button
@@ -63,10 +69,11 @@ export default function SiteHeader() {
               </nav>
             </div>
 
-            <div className="menu-btns">
+            <div className="menu-btns d-flex align-items-center gap-2">
+              <ThemeToggle />
               <div className="menu-sidebar">
                 <Link href="/contact" aria-label="Contact">
-                  <img src="/assets/images/sidebar-tottler.svg" alt="Toggler" />
+                  <img src="/assets/images/sidebar-tottler.svg" alt="" />
                 </Link>
               </div>
             </div>

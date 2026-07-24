@@ -8,12 +8,11 @@ export default function HomePage() {
       <section className="main-hero-area pt-150 pb-80 rel z-1">
         <div className="container container-1620">
           <div className="row align-items-center">
-            <div className="col-lg-4 col-sm-7">
+            <div className="col-lg-5 col-sm-7">
               <div className="hero-content rmb-55 wow fadeInUp delay-0-2s">
-                <span className="h2">Hello, i&apos;m </span>
-                <h1>
-                  <b>{profile.name}</b> {profile.titleShort}
-                </h1>
+                <p className="hero-kicker">Hello, I&apos;m</p>
+                <h1 className="hero-name">{profile.name}</h1>
+                <p className="hero-role">{profile.title}</p>
                 <p>{profile.heroText}</p>
                 <div className="hero-btns">
                   <Link href="/contact" className="theme-btn">
@@ -28,30 +27,28 @@ export default function HomePage() {
                     View LinkedIn <i className="far fa-angle-right" />
                   </a>
                 </div>
-              </div>
-            </div>
-            <div className="col-lg-3 col-sm-5 order-lg-3">
-              <div className="hero-counter-wrap ms-lg-auto rmb-55 wow fadeInUp delay-0-4s">
-                <div className="counter-item counter-text-wrap">
-                  <span className="count-text plus">{profile.stats.years}</span>
-                  <span className="counter-title">Years Of Experience</span>
-                </div>
-                <div className="counter-item counter-text-wrap">
-                  <span className="count-text plus">{profile.stats.projects}</span>
-                  <span className="counter-title">Project Complete</span>
-                </div>
-                <div className="counter-item counter-text-wrap">
-                  <span className="count-text percent">{profile.stats.satisfaction}</span>
-                  <span className="counter-title">Client Satisfactions</span>
+                <div className="hero-stats">
+                  <div className="stat">
+                    <strong>{profile.stats.years}+</strong>
+                    <span>Years Exp.</span>
+                  </div>
+                  <div className="stat">
+                    <strong>{profile.stats.projects}+</strong>
+                    <span>Projects</span>
+                  </div>
+                  <div className="stat">
+                    <strong>{profile.stats.satisfaction}%</strong>
+                    <span>Satisfaction</span>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="col-lg-5">
+            <div className="col-lg-6 offset-lg-1">
               <div className="author-image-part wow fadeIn delay-0-3s">
                 <div className="bg-circle" />
                 <img src={profile.photo} alt={profile.name} />
                 <div className="progress-shape">
-                  <img src="/assets/images/progress-shape.png" alt="Progress" />
+                  <img src="/assets/images/progress-shape.png" alt="" />
                 </div>
               </div>
             </div>
@@ -100,14 +97,14 @@ export default function HomePage() {
               </div>
               <div className="col-lg-5">
                 <div className="about-image-part wow fadeInUp delay-0-3s">
-                  <img src="/assets/images/about.jpg" alt="About Me" />
+                  <img src={profile.photo} alt={profile.name} />
                   <div className="about-btn btn-one wow fadeInRight delay-0-4s">
                     <img src="/assets/images/btn-image1.png" alt={profile.title} />
                     <h6>{profile.title}</h6>
                     <i className="fas fa-arrow-right" />
                   </div>
                   <div className="about-btn btn-two wow fadeInRight delay-0-5s">
-                    <img src={profile.photo} alt={profile.name} />
+                    <img src={profile.photoAvatar || profile.photo} alt={profile.name} />
                     <h6>{profile.shortName}</h6>
                     <i className="fas fa-arrow-right" />
                   </div>

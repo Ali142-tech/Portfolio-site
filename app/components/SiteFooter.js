@@ -13,8 +13,9 @@ export default function SiteFooter() {
             <div className="col-lg-2 col-md-12">
               <div className="footer-widget widget_logo wow fadeInUp delay-0-2s">
                 <div className="footer-logo">
-                  <Link href="/">
-                    <img src="/assets/images/logo.png" alt={profile.name} />
+                  <Link href="/" className="brand-mark">
+                    {profile.name.split(" ").slice(0, 2).join(" ")}
+                    <span>.</span>
                   </Link>
                 </div>
               </div>
@@ -39,14 +40,21 @@ export default function SiteFooter() {
               </div>
               <div className="footer-widget widget_newsletter wow fadeInUp delay-0-4s">
                 <form
+                  className="newsletter-form"
                   onSubmit={(e) => {
                     e.preventDefault();
                   }}
                 >
-                  <label htmlFor="email-address">
-                    <i className="far fa-envelope" />
-                  </label>
-                  <input id="email-address" type="email" placeholder="Email Address" required />
+                  <div className="newsletter-field">
+                    <i className="far fa-envelope" aria-hidden />
+                    <input
+                      id="email-address"
+                      type="email"
+                      placeholder="Email Address"
+                      required
+                      aria-label="Email Address"
+                    />
+                  </div>
                   <button type="submit">
                     Sign Up <i className="far fa-angle-right" />
                   </button>

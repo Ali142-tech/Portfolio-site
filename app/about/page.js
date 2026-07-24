@@ -48,14 +48,14 @@ export default function AboutPage() {
               </div>
               <div className="col-lg-5">
                 <div className="about-image-part wow fadeInUp delay-0-3s">
-                  <img src="/assets/images/about.jpg" alt="About Me" />
+                  <img src={profile.photo} alt={profile.name} />
                   <div className="about-btn btn-one">
                     <img src="/assets/images/btn-image1.png" alt={profile.title} />
                     <h6>{profile.title}</h6>
                     <i className="fas fa-arrow-right" />
                   </div>
                   <div className="about-btn btn-two">
-                    <img src={profile.photo} alt={profile.name} />
+                    <img src={profile.photoAvatar || profile.photo} alt={profile.name} />
                     <h6>{profile.shortName}</h6>
                     <i className="fas fa-arrow-right" />
                   </div>

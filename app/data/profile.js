@@ -7,7 +7,8 @@ export const profile = {
   email: "alliybutt3@gmail.com",
   phone: "+923230112504",
   phoneDisplay: "+92 323 0112504",
-  photo: "/assets/images/profile.jpg",
+  photo: "/assets/images/profile.jpg?v=3",
+  photoAvatar: "/assets/images/profile-avatar.jpg?v=3",
   linkedin: "https://www.linkedin.com/in/muhammad-ali-butt-1a7758299",
   heroText:
     "I build scalable web applications with React, Laravel, MERN, and Docker — clean UI on the front, solid APIs and databases on the back.",
@@ -57,6 +58,12 @@ export const profile = {
       years: "2020 – 2024",
       title: "Bachelor's in Information Technology",
       school: "University of Education, Lahore",
+      location: "Lahore, Punjab, Pakistan",
+    },
+    {
+      years: "2018 – 2020",
+      title: "ICS (Intermediate in Computer Science)",
+      school: "Degree College",
       location: "Lahore, Punjab, Pakistan",
     },
   ],
