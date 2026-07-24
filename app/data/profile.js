@@ -7,8 +7,8 @@ export const profile = {
   email: "alliybutt3@gmail.com",
   phone: "+923230112504",
   phoneDisplay: "+92 323 0112504",
-  photo: "/assets/images/profile.jpg?v=3",
-  photoAvatar: "/assets/images/profile-avatar.jpg?v=3",
+  photo: "/assets/images/profile-hero.png?v=9",
+  photoAvatar: "/assets/images/profile-avatar.jpg?v=9",
   linkedin: "https://www.linkedin.com/in/muhammad-ali-butt-1a7758299",
   heroText:
     "I build scalable web applications with React, Laravel, MERN, and Docker — clean UI on the front, solid APIs and databases on the back.",
@@ -337,6 +337,42 @@ export const profile = {
         "Enquiry / Callback Flow",
       ],
       reverse: false,
+    },
+    {
+      slug: "alhamd-travel-usa",
+      title: "Alhamd Travel (USA)",
+      tag: "Travel / Hajj & Umrah",
+      image: "/assets/images/project-alhamdtravel-home.png",
+      gallery: [
+        {
+          src: "/assets/images/project-alhamdtravel-home.png",
+          label: "Homepage / Package Finder",
+        },
+        {
+          src: "/assets/images/project-alhamdtravel-umrah.png",
+          label: "Umrah 2026 Packages",
+        },
+        {
+          src: "/assets/images/project-alhamdtravel-hajj.png",
+          label: "Shifting Hajj Packages",
+        },
+        {
+          src: "/assets/images/project-alhamdtravel-contact.png",
+          label: "Contact Page",
+        },
+      ],
+      url: "https://www.alhamdtravel.com/",
+      description:
+        "USA-focused Hajj & Umrah travel agency site with multi-city package search, seasonal deals, custom packages, visa info, and enquiry flows for pilgrims across major US airports.",
+      details:
+        "Alhamd Travel is a US Islamic travel platform for Hajj and Umrah. It features departure-airport package search, Umrah and Hajj package categories (including city-specific and seasonal deals), custom packages, visa guidance, and contact/enquiry options for travelers booking from the United States.",
+      highlights: [
+        "US Airport Package Search",
+        "Hajj & Umrah Deal Listings",
+        "City-Specific Umrah Packages",
+        "Enquiry / Contact Flows",
+      ],
+      reverse: true,
     },
     {
       slug: "echo-fine-properties",

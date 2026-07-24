@@ -386,29 +386,31 @@ a:hover {
 
 .author-image-part {
   position: relative;
+  background: transparent !important;
+  overflow: visible !important;
+  border-radius: 0 !important;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .author-image-part > img {
   width: 100%;
-  max-width: 520px;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: center 12%;
-  border-radius: 28px;
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow);
+  max-width: 480px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  object-position: center center;
+  border-radius: 50%;
+  border: 0 !important;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35) !important;
+  background: transparent !important;
   animation: softRise 0.85s ease both;
-  background: var(--panel);
 }
 
-.author-image-part .bg-circle {
-  background: radial-gradient(circle, var(--accent-soft), transparent 68%) !important;
-  opacity: 1 !important;
-  filter: blur(8px);
-}
-
+.author-image-part .bg-circle,
 .author-image-part .progress-shape {
-  opacity: 0.55;
+  display: none !important;
 }
 
 .about-btn img {
@@ -418,13 +420,22 @@ a:hover {
   border-radius: 50%;
 }
 
+.about-image-part {
+  background: transparent !important;
+  max-width: 420px;
+  margin-left: auto;
+}
+
 .about-image-part > img {
   width: 100%;
   height: auto;
   aspect-ratio: 1 / 1;
-  object-fit: cover;
-  object-position: center top;
-  border-radius: 20px;
+  object-fit: contain;
+  object-position: center center;
+  border-radius: 50%;
+  border: 0 !important;
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.3) !important;
+  background: transparent !important;
 }
 
 /* Floating about pills stay white — keep dark readable text */
