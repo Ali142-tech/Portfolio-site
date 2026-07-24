@@ -23,11 +23,23 @@ const themeInitScript = `
 })();
 `;
 
+const templateStyles = [
+  "/assets/css/flaticon.min.css",
+  "/assets/css/fontawesome-5.14.0.min.css",
+  "/assets/css/bootstrap.min.css",
+  "/assets/css/animate.min.css",
+  "/assets/css/slick.min.css",
+  "/assets/css/style.css",
+];
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        {templateStyles.map((href) => (
+          <link key={href} rel="stylesheet" href={href} />
+        ))}
       </head>
       <body className="home-one" suppressHydrationWarning>
         <div className="page-wrapper">
