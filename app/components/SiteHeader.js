@@ -20,6 +20,11 @@ export default function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
+  const isActive = (href) => {
+    if (href === "/") return pathname === "/";
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
   return (
     <header className="main-header menu-absolute">
       <div className="header-upper">
@@ -58,8 +63,12 @@ export default function SiteHeader() {
                 <div className={`navbar-collapse collapse clearfix${open ? " show" : ""}`}>
                   <ul className="navigation clearfix">
                     {nav.map((item) => (
-                      <li key={item.href} className={pathname === item.href ? "current" : undefined}>
-                        <Link href={item.href} onClick={() => setOpen(false)}>
+                      <li key={item.href} className={isActive(item.href) ? "current" : undefined}>
+                        <Link
+                          href={item.href}
+                          onClick={() => setOpen(false)}
+                          aria-current={isActive(item.href) ? "page" : undefined}
+                        >
                           {item.label}
                         </Link>
                       </li>
@@ -71,7 +80,10 @@ export default function SiteHeader() {
 
             <div className="menu-btns d-flex align-items-center gap-2">
               <ThemeToggle />
-              <div className="menu-sidebar">
+              <Link href="/contact" className="theme-btn header-cta d-none d-lg-inline-flex">
+                Hire Me <i className="far fa-angle-right" />
+              </Link>
+              <div className="menu-sidebar d-lg-none">
                 <Link href="/contact" aria-label="Contact">
                   <img src="/assets/images/sidebar-tottler.svg" alt="" />
                 </Link>

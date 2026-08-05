@@ -1,19 +1,30 @@
 import Link from "next/link";
 import BgLines from "./components/BgLines";
+import ProjectSlider from "./components/ProjectSlider";
 import { profile } from "./data/profile";
 
 export default function HomePage() {
   return (
     <main>
-      <section className="main-hero-area pt-150 pb-80 rel z-1">
+      <section className="main-hero-area pt-150 pb-100 rel z-1">
+        <div className="hero-atmosphere" aria-hidden="true">
+          <span className="hero-orb hero-orb-a" />
+          <span className="hero-orb hero-orb-b" />
+          <span className="hero-grid" />
+        </div>
         <div className="container container-1620">
           <div className="row align-items-center">
-            <div className="col-lg-5 col-sm-7">
+            <div className="col-lg-6">
               <div className="hero-content rmb-55 wow fadeInUp delay-0-2s">
-                <p className="hero-kicker">Hello, I&apos;m</p>
-                <h1 className="hero-name">{profile.name}</h1>
-                <p className="hero-role">{profile.title}</p>
-                <p>{profile.heroText}</p>
+                <p className="hero-kicker">
+                  <span className="hero-kicker-dot" />
+                  {profile.title} · Lahore
+                </p>
+                <h1 className="hero-name">
+                  Muhammad
+                  <span>Ali Butt</span>
+                </h1>
+                <p className="hero-lede">{profile.heroText}</p>
                 <div className="hero-btns">
                   <Link href="/contact" className="theme-btn">
                     Hire Me <i className="far fa-angle-right" />
@@ -22,39 +33,37 @@ export default function HomePage() {
                     href={profile.linkedin}
                     target="_blank"
                     rel="noreferrer"
-                    className="read-more"
+                    className="btn-ghost"
                   >
-                    View LinkedIn <i className="far fa-angle-right" />
+                    View LinkedIn
                   </a>
-                </div>
-                <div className="hero-stats">
-                  <div className="stat">
-                    <strong>{profile.stats.years}+</strong>
-                    <span>Years Exp.</span>
-                  </div>
-                  <div className="stat">
-                    <strong>{profile.stats.projects}+</strong>
-                    <span>Projects</span>
-                  </div>
-                  <div className="stat">
-                    <strong>{profile.stats.satisfaction}%</strong>
-                    <span>Satisfaction</span>
-                  </div>
                 </div>
               </div>
             </div>
-            <div className="col-lg-6 offset-lg-1">
+            <div className="col-lg-6">
               <div className="author-image-part wow fadeIn delay-0-3s">
+                <div className="portrait-glow" />
+                <div className="portrait-ring" />
                 <div className="bg-circle" />
                 <img src={profile.photo} alt={profile.name} />
-                <div className="progress-shape">
-                  <img src="/assets/images/progress-shape.png" alt="" />
-                </div>
               </div>
             </div>
           </div>
+          <div className="hero-metrics wow fadeInUp delay-0-4s">
+            <div className="metric">
+              <strong>{profile.stats.years}+</strong>
+              <span>Years experience</span>
+            </div>
+            <div className="metric">
+              <strong>{profile.stats.projects}+</strong>
+              <span>Shipped projects</span>
+            </div>
+            <div className="metric">
+              <strong>{profile.stats.satisfaction}%</strong>
+              <span>Client satisfaction</span>
+            </div>
+          </div>
         </div>
-        <BgLines />
       </section>
 
       <section className="about-area rel z-1">
@@ -273,58 +282,22 @@ export default function HomePage() {
       <section className="projects-area pt-130 rpt-100 pb-100 rpb-70 rel z-1">
         <div className="container">
           <div className="row justify-content-center">
-            <div className="col-xl-12">
+            <div className="col-xl-10">
               <div className="section-title text-center mb-60 wow fadeInUp delay-0-2s">
                 <span className="sub-title mb-15">Latest Works</span>
                 <h2>
-                  Explore My Popular <span>Projects</span>
+                  Selected <span>Projects</span>
                 </h2>
               </div>
             </div>
           </div>
-          {profile.projects.map((project) => (
-            <div className="row align-items-center pb-25" key={project.slug}>
-              <div className={`col-lg-6${project.reverse ? " order-lg-2" : ""}`}>
-                <div className="project-image wow fadeInLeft delay-0-2s">
-                  <img src={project.image} alt={project.title} />
-                </div>
-              </div>
-              <div className={`col-xl-5 col-lg-6${project.reverse ? " ms-auto" : ""}`}>
-                <div className="project-content wow fadeInRight delay-0-2s">
-                  <span className="sub-title">{project.tag}</span>
-                  <h2>
-                    <Link href={`/projects/${project.slug}`}>{project.title}</Link>
-                  </h2>
-                  <p>{project.description}</p>
-                  {project.url ? (
-                    <p className="mb-20">
-                      <a href={project.url} target="_blank" rel="noreferrer" className="read-more">
-                        {project.url.replace(/^https?:\/\//, "").replace(/\/$/, "")}{" "}
-                        <i className="far fa-external-link" />
-                      </a>
-                    </p>
-                  ) : null}
-                  <div className="d-flex flex-wrap align-items-center gap-3">
-                    <Link href={`/projects/${project.slug}`} className="details-btn">
-                      <i className="far fa-arrow-right" />
-                    </Link>
-                    {project.url ? (
-                      <a href={project.url} target="_blank" rel="noreferrer" className="theme-btn">
-                        Live Project <i className="far fa-angle-right" />
-                      </a>
-                    ) : null}
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-          <div className="project-btn text-center wow fadeInUp delay-0-2s">
+          <ProjectSlider projects={profile.projects} />
+          <div className="project-btn text-center mt-50 wow fadeInUp delay-0-2s">
             <Link href="/projects" className="theme-btn">
-              View More Projects <i className="far fa-angle-right" />
+              View All Projects <i className="far fa-angle-right" />
             </Link>
           </div>
         </div>
-        <BgLines />
       </section>
 
       <section className="contact-area pt-95 pb-130 rpt-70 rpb-100 rel z-1">
@@ -494,27 +467,18 @@ export default function HomePage() {
         <BgLines />
       </section>
 
-      <div className="client-logo-area rel z-1 pt-130 rpt-100 pb-60">
+      <section className="tech-strip rel z-1 pt-80 pb-100">
         <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-xl-12">
-              <div className="section-title text-center pt-5 mb-65 wow fadeInUp delay-0-2s">
-                <h6>
-                  Building with <span>React, Laravel &amp; MySQL</span> for real products
-                </h6>
-              </div>
-            </div>
-          </div>
-          <div className="client-logo-wrap">
-            {Array.from({ length: 10 }, (_, i) => (
-              <Link className="client-logo-item wow fadeInUp delay-0-2s" href="/contact" key={i}>
-                <img src={`/assets/images/client-logo${i + 1}.png`} alt="Client Logo" />
-              </Link>
-            ))}
+          <div className="tech-strip-inner wow fadeInUp delay-0-2s">
+            <p className="tech-strip-label">Building with</p>
+            <ul className="tech-strip-list">
+              {["React", "Next.js", "Laravel", "MySQL", "Node.js", "Tailwind"].map((tech) => (
+                <li key={tech}>{tech}</li>
+              ))}
+            </ul>
           </div>
         </div>
-        <BgLines />
-      </div>
+      </section>
     </main>
   );
 }
