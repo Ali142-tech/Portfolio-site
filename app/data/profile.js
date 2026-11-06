@@ -412,6 +412,42 @@ export const profile = {
       ],
       reverse: true,
     },
+    {
+      slug: "urgent-rishta",
+      title: "Urgent Rishta",
+      tag: "Matrimonial / Matchmaking Platform",
+      image: "/assets/images/project-urgentrishta-home.png",
+      gallery: [
+        {
+          src: "/assets/images/project-urgentrishta-home.png",
+          label: "Homepage",
+        },
+        {
+          src: "/assets/images/project-urgentrishta-packages.png",
+          label: "Pricing & Personalized Service",
+        },
+        {
+          src: "/assets/images/project-urgentrishta-register.png",
+          label: "Create Account",
+        },
+        {
+          src: "/assets/images/project-urgentrishta-login.png",
+          label: "Login (Mobile, Google & Email)",
+        },
+      ],
+      url: "https://urgentrishta.com/",
+      description:
+        "A global matrimonial platform for families and individuals across Pakistan, the UK, USA, Canada, Australia, Europe and the Gulf — with verified profiles, online plans, and a confidential personalized matchmaking service.",
+      details:
+        "Urgent Rishta lets members search verified profiles by age, location and education, or choose a personalized, confidential matchmaking service managed by a dedicated team. It includes registration and login via mobile number, Google or email, premium subscription plans, and consultation booking.",
+      highlights: [
+        "Verified Profile Search & Filters",
+        "Online & Personalized Plans",
+        "Mobile / Google / Email Auth",
+        "Consultation Booking Flow",
+      ],
+      reverse: false,
+    },
   ],
   blogs: [
     {
