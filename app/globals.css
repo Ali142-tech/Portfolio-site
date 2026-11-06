@@ -2361,3 +2361,62 @@ html[data-theme="light"] .featured-project {
     animation: none !important;
   }
 }
+
+/* Skill % badge: keep text readable on hover (badge turns accent-colored) */
+html .skill-item:hover .percent {
+  background: var(--accent) !important;
+  color: #0b0f0a !important;
+}
+
+html[data-theme="light"] .skill-item:hover .percent {
+  background: var(--accent) !important;
+  color: #ffffff !important;
+}
+
+/* Secondary button: visible outline + text in both themes */
+html .theme-btn.style-two,
+html[data-theme="light"] .theme-btn.style-two {
+  background: transparent !important;
+  color: var(--heading) !important;
+  border: 1px solid var(--accent) !important;
+  box-shadow: none;
+}
+
+html .theme-btn.style-two:hover,
+html .theme-btn.style-two:focus,
+html[data-theme="light"] .theme-btn.style-two:hover,
+html[data-theme="light"] .theme-btn.style-two:focus {
+  background: var(--accent) !important;
+  color: var(--btn-ink) !important;
+}
+
+html[data-theme="light"] .theme-btn.style-two:hover,
+html[data-theme="light"] .theme-btn.style-two:focus {
+  color: #ffffff !important;
+}
+
+/* Checklist bullets: show the tick icon instead of a solid square */
+.list-style-one li::before,
+.list-style-one li:before {
+  background: transparent !important;
+  color: var(--accent) !important;
+  font-weight: 300;
+}
+
+/* Links inside content (e.g. project live URL) */
+.live-link {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  word-break: break-all;
+}
+
+a[href^="tel:"] {
+  white-space: nowrap;
+}
+
+/* Light theme: readable skill % badges */
+html[data-theme="light"] .skill-item .percent {
+  background: var(--accent-soft) !important;
+  color: var(--accent) !important;
+}

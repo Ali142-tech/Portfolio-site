@@ -49,7 +49,7 @@ export default async function ProjectDetailsPage({ params }) {
               {project.url ? (
                 <p className="mt-15 mb-0">
                   Live Project:{" "}
-                  <a href={project.url} target="_blank" rel="noreferrer">
+                  <a href={project.url} target="_blank" rel="noreferrer" className="live-link">
                     {project.url}
                   </a>
                 </p>
